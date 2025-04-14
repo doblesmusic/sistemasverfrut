@@ -1,0 +1,280 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.montserrat {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+}
+
+nav {
+  background-color: #f4f5fc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 16px;
+  height: auto;
+  width: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+ul {
+  font-family: "Montserrat", serif, bold;
+  color: #282d37;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#pc img {
+  border-width: 100px;
+  padding-left: 30px;
+  max-width: 100%;
+  height: auto;
+  margin-left: 400px;
+  position: absolute;
+  float: right;
+  width: 850px;
+  right: 10px;
+}
+
+.menu li {
+  margin-left: 36px;
+}
+
+.menu {
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  height: auto;
+  font-family: "Montserrat", serif;
+  color: #282d37;
+  position: relative;
+  left: 500px;
+  right: 500px;
+  margin-left:auto;
+  margin-right: auto;
+
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "Montserrat", serif;
+  color: #282d37;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  font-family: "Montserrat", serif;
+  color: #282d37;
+}
+
+h1 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  color: #f4f5fc;
+  background: transparent linear-gradient(253deg, #2463ae 0%, #0b3456 100%) 0% 0% no-repeat padding-box;
+
+}
+
+.imagen {
+
+  position: absolute;
+  float: left;
+  display: block;
+  height: auto;
+  width: auto;
+  position: fixed;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+  bottom: 83%;
+  margin-top: 0%;
+  line-height: 0%;
+  scale: 50%;
+  z-index: 1;
+}
+
+h1 {
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-bottom: 350px;
+  margin: 0px;
+  font-size: 100px;
+  line-height: 85px;
+}
+
+#gestionamos {
+  color: #f4f5fc;
+  position: absolute;
+  margin: 10px;
+  display: inline;
+  float: left;
+  padding-left: 150px;
+  padding-right: 700px;
+  padding-bottom: 40px;
+  font-size: 25px;
+  left: 0;
+  top: 520px;
+  font-family: "Montserrat", serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height:normal
+}
+
+.VerfrutCloud {
+  color: #f4f5fc;
+  position: absolute;
+  background-color: #1563b1;
+  padding: 15px;
+  border: 5px;
+  border-radius: 10px;
+  background-size: auto;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  font-family: "Montserrat", serif, Bold;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 130%;
+  top: 670px;
+  left: 10%;
+}
+
+.soportetitulo {
+  font-family: "Montserrat", serif;
+  font-weight: 100;
+
+}

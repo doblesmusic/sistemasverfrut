@@ -1,0 +1,39 @@
+{
+    "livePreview.defaultPreviewPath": "/Index.html",
+    "folder-color.pathColors": [
+        {
+            "folderPath": "NewHomeQA/Index.html/",
+            "color": "foldercolorizer.color_00cc33"
+        },
+        {
+            "folderPath": "NewHomeQA/tutoriales.html/",
+            "color": "foldercolorizer.color_66cccc"
+        },
+        {
+            "folderPath": "NewHomeQA/team-details.html/",
+            "color": "foldercolorizer.color_6666ff"
+        },
+        {
+            "folderPath": "NewHomeQA/blog.html/",
+            "color": "foldercolorizer.color_dd0000"
+        },
+        {
+            "folderPath": "NewHomeQA/contact.html/",
+            "color": "foldercolorizer.color_ffcc33"
+        },
+        {
+            "folderPath": "NewHomeQA/header.html/",
+            "badge": "🥲",
+            "color": "foldercolorizer.color_ccff99"
+        },
+        {
+            "folderPath": "NewHomeQA/header.js/",
+            "badge": "😘",
+            "color": "foldercolorizer.color_ccff99"
+        },
+        {
+            "folderPath": "NewHomeQA/blog-details.html/",
+            "color": "foldercolorizer.color_00ccff"
+        }
+    ]
+}

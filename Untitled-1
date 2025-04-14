@@ -1,0 +1,110 @@
+on run {input, parameters}
+	set downloadFolder to (path to downloads folder as text)
+	set destinationFolders to {"Documentos", "Imagenes", "Musica", "Videos", "Otros"}
+	
+	-- Crear las carpetas si no existen
+	tell application "Finder"
+		repeat with folderName in destinationFolders
+			set folderPath to (downloadFolder & folderName)
+			if not (exists folder folderPath) then
+				make new folder at downloadFolder with properties {name:folderName}
+			end if
+		end repeat
+	end tell
+
+	-- Verificar si todas las carpetas ya existen
+	set allFoldersExist to true
+	tell application "Finder"
+		repeat with folderName in destinationFolders
+			set folderPath to (downloadFolder & folderName)
+			if not (exists folder folderPath) then
+				set allFoldersExist to false
+				exit repeat
+			end if
+		end repeat
+	end tell
+	
+	-- Solo crear las carpetas si alguna no existe
+	if not allFoldersExist then
+		tell application "Finder"
+			repeat with folderName in destinationFolders
+				set folderPath to (downloadFolder & folderName)
+				if not (exists folder folderPath) then
+					make new folder at downloadFolder with properties {name:folderName}
+				end if
+			end repeat
+		end tell
+	end if
+	
+	-- Clasificación de archivos
+	set fileExtensions to {{"Documentos", {"pdf", "docx", "xlsx", "pptx", "txt", "csv"}}, ¬
+		{"Imagenes", {"jpg", "jpeg", "png", "gif", "bmp", "svg", "webp"}}, ¬
+		{"Musica", {"mp3", "wav", "flac", "aac"}}, ¬
+		{"Videos", {"mp4", "mov", "avi", "mkv"}}}
+	
+	tell application "Finder"
+		set fileList to every file of folder downloadFolder
+		repeat with aFile in fileList
+			set fileExtension to name extension of aFile
+			if fileExtension is not "" then
+				set moved to false
+				repeat with category in fileExtensions
+					set categoryName to item 1 of category
+					set categoryExtensions to item 2 of category
+					if fileExtension is in categoryExtensions then
+						set targetFolder to folder (downloadFolder & categoryName)
+						set fileName to name of aFile
+						set baseName to text 1 thru ((offset of "." & fileExtension in fileName) - 1) of fileName
+						
+						-- Verificar si el archivo ya existe en la carpeta destino
+						set counter to 1
+						repeat
+							set newFileName to fileName
+							if counter > 1 then
+								set newFileName to baseName & " (" & (counter - 1) & ")." & fileExtension
+							end if
+							if not (exists file (targetFolder as text) & newFileName) then
+								exit repeat
+							end if
+							set counter to counter + 1
+						end repeat
+						
+						-- Renombrar el archivo si es necesario
+						if counter > 1 then
+							set name of aFile to (baseName & " (" & (counter - 1) & ")." & fileExtension)
+						end if
+						
+						move aFile to targetFolder
+						set moved to true
+						exit repeat
+					end if
+				end repeat
+				if moved is false then
+					set targetFolder to folder (downloadFolder & "Otros")
+					set fileName to name of aFile
+					set baseName to text 1 thru ((offset of "." & fileExtension in fileName) - 1) of fileName
+					
+					-- Verificar si el archivo ya existe en la carpeta Otros
+					set counter to 1
+					repeat
+						set newFileName to fileName
+						if counter > 1 then
+							set newFileName to baseName & " (" & (counter - 1) & ")." & fileExtension
+						end if
+						if not (exists file (targetFolder as text) & newFileName) then
+							exit repeat
+						end if
+						set counter to counter + 1
+					end repeat
+					
+					-- Renombrar el archivo si es necesario
+					if counter > 1 then
+						set name of aFile to (baseName & " (" & (counter - 1) & ")." & fileExtension)
+					end if
+					
+					move aFile to targetFolder
+				end if
+			end if
+		end repeat
+	end tell
+end run 
